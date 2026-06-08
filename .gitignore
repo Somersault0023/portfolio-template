@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.venv/
+node_modules/
+dist/
+backend/app/storage/*.sqlite3
+backend/app/storage/uploads/*
+!backend/app/storage/uploads/.gitkeep

@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: "replace-in-production"
+      DATABASE_PATH: "app/storage/portfolio.sqlite3"
+      UPLOAD_DIR: "app/storage/uploads"
+    volumes:
+      - ./backend/app/storage:/app/app/storage
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
